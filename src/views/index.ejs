@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Formulario</h1>
+
+    <form action="/" method="post">
+      <label for="nombre">Ingrese su nombre</label>
+      <input type="text" name="nombre" id="nombre">
+      <hr>
+      <label for="colors">Ingrese un color</label>
+      <select name="colors" id="colors">
+        <option value="" selected>Selecciona un color</option>
+        <option value="azul">azúl</option>
+        <option value="rojo">rojo</option>
+        <option value="verde">verde</option>
+        <option value="amarillo">amarillo</option>
+      </select>
+      <hr>
+      <label for="email">Ingrese su email</label>
+      <input type="email" name="email" id="email">
+      <hr>
+      <label for="edad">Ingrese su edad</label>
+      <input type="number" name="edad" id="edad">
+      <br>
+      <label for="remember"> Recordar color</label>
+      <input type="checkbox" name="remember" id="remember">
+      <br>
+      <button type="submit">Enviar</button>
+      <% if (locals.errores) { %>
+        <% errores.forEach(error => { %>
+          <p> <%= error.msg %> </p>
+         <% }) %>
+      <% } %>
+    </form>
+
+  </body>
+</html>

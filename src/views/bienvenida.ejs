@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body class="<%= dato && dato.color ? dato.color : null %>">
+    <a href="/Deslogueo">Desloguearse</a>
+    <br />
+    <form action="/color" method="POST">
+      <button type="submit">Olvidar Color</button>
+    </form>
+    <h1>
+      Hola <%= dato.nombre %>, elegiste el color: <%= dato.color %>, tu email es: <%= dato.email %>
+      y tu edad es: <%= dato.edad %>
+    </h1>
+
+    <a href="/gracias">Gracias!</a>
+  </body>
+</html>
